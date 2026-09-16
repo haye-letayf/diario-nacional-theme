@@ -14,6 +14,10 @@ Jorge has been explicit: the legacy front-end and user dashboard are functional 
 
 Design work is scheduled as its own phase near the end of the plan (Fase 7), after the functional core is verified equivalent to the legacy system — don't front-load visual polish before the underlying data/logic is solid.
 
+## Environments
+
+Local (LocalWP) → staging (`dev.diarionacional.com.mx`, deployed via cPanel Git Version Control pulling from this repo's `main`) → Jorge's existing cPanel production at `diarionacional.com.mx` (cutover process TBD, deferred until staging is verified). Nothing gets pushed to any shared branch or deployed without Jorge's explicit go-ahead.
+
 ## Status
 
 Fase 0: repo scaffolding only, minimal valid WordPress theme header. No templates built yet.
