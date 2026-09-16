@@ -16,7 +16,15 @@ Design work is scheduled as its own phase near the end of the plan (Fase 7), aft
 
 ## Environments
 
-Local (LocalWP) → staging (`dev.diarionacional.com.mx`, deployed via cPanel Git Version Control pulling from this repo's `main`) → Jorge's existing cPanel production at `diarionacional.com.mx` (cutover process TBD, deferred until staging is verified). Nothing gets pushed to any shared branch or deployed without Jorge's explicit go-ahead.
+Local (LocalWP) → staging (`dev.diarionacional.com.mx/a`, deployed via cPanel Git Version Control) → Jorge's existing cPanel production at `diarionacional.com.mx` (cutover process TBD, deferred until staging is verified). Nothing gets pushed to any shared branch or deployed without Jorge's explicit go-ahead.
+
+**cPanel GVC mechanics**: the "Repository Path" (`/home/edictosyavisosno/repositories/diario-nacional-theme`) is only GVC's working copy, not where WordPress reads the theme from. `.cpanel.yml` defines the real deploy target:
+
+```
+/home/edictosyavisosno/public_html/dev.diarionacional.com.mx/a/wp-content/themes/diario-nacional-theme/
+```
+
+Deploy flow: GVC → **Update from Remote** → **Deploy HEAD Commit**.
 
 ## Status
 
